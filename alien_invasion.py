@@ -2,6 +2,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 import game_functions as gf
+from  pygame.sprite import Group
 
 
 def run_game():
@@ -15,7 +16,10 @@ def run_game():
     # Создание корабля
     ship = Ship(ai_settings, screen)
 
-    #Изменение цвета фона игры
+    # Создание группы для хранения пуль
+    bullets = Group()
+
+    # Изменение цвета фона игры
     bg_color = (230,230,230)
 
     # Запуск основного цикла игры
@@ -24,6 +28,8 @@ def run_game():
         gf.check_events(ship)
         #Движение корабля
         ship.update()
+
+        bullets.update()
         # При каждом проходе цикла прорисовывется экран
         gf.update_screen(ai_settings, screen, ship)
 
