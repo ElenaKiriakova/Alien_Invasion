@@ -13,7 +13,7 @@ def run_game():
     pygame.display.set_caption("Alien Invasion")
 
     # Создание корабля
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
 
     #Изменение цвета фона игры
     bg_color = (230,230,230)
