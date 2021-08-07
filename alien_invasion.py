@@ -26,7 +26,7 @@ def run_game():
     alien = Alien(ai_settings, screen)
 
     # Создание флота пришельцев
-    gf.create_fleet(ai_settings,screen, aliens)
+    gf.create_fleet(ai_settings,screen,ship, aliens)
 
     # Изменение цвета фона игры
     bg_color = (230,230,230)
