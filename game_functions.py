@@ -55,15 +55,19 @@ def check_events(ai_settings, screen, ship, bullets):
         elif event.type == pygame.KEYUP:
             check_keyup_events(event,ship)
 
-def  update_bullets(bullets):
+def  update_bullets(aliens, bullets):
     """Обновление позиции пуль и уничтожает старые пули """
     # Обновление позиции пуль
     bullets.update()
 
-    #Удаление пуль, вышедших за край экрана
+    # Удаление пуль, вышедших за край экрана
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
+
+    # Проверка попаданий в пришельцев
+    # При обнаружении попадания удалить пулю и пришельца
+    collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     """Выпускает пулю, если максимум еще не достигнут"""
