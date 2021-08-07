@@ -4,7 +4,7 @@ from bullet import Bullet
 
 
 
-def update_screen(ai_settings, screen, ship, bullets):
+def update_screen(ai_settings, screen, ship, alien, bullets):
     """Обновляет изображения на экране и отображает новый экран"""
     # При каждом проходе цкла прорисовывается экран
     screen.fill(ai_settings.bg_color)
@@ -16,6 +16,7 @@ def update_screen(ai_settings, screen, ship, bullets):
 
 
     ship.blitme()
+    alien.blitme()
     # Отображение последнего прорисованного экрана
     pygame.display.flip()
 

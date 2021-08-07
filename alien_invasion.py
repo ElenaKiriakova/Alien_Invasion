@@ -1,6 +1,7 @@
 import pygame
 from settings import Settings
 from ship import Ship
+from alien import Alien
 import game_functions as gf
 from  pygame.sprite import Group
 
@@ -19,6 +20,9 @@ def run_game():
     # Создание группы для хранения пуль
     bullets = Group()
 
+    #Создание пришельца
+    alien = Alien(ai_settings, screen)
+
     # Изменение цвета фона игры
     bg_color = (230,230,230)
 
@@ -31,6 +35,6 @@ def run_game():
 
         gf.update_bullets(bullets)
         # При каждом проходе цикла прорисовывется экран
-        gf.update_screen(ai_settings, screen, ship, bullets)
+        gf.update_screen(ai_settings, screen, ship, alien, bullets)
 
 run_game()
