@@ -51,3 +51,13 @@ def check_events(ai_settings, screen, ship, bullets):
 
         elif event.type == pygame.KEYUP:
             check_keyup_events(event,ship)
+
+def  update_bullets(bullets):
+    """Обновление позиции пуль и уничтожает старые пули """
+    # Обновление позиции пуль
+    bullets.update()
+
+    #Удаление пуль, вышедших за край экрана
+    for bullet in bullets.copy():
+        if bullet.rect.bottom <= 0:
+            bullets.remove(bullet)
