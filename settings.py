@@ -18,3 +18,6 @@ class Settings():
         self.bullet_height = 15
         self.bullet_color = 60, 60, 60
         self.bullets_allowed = 5
+
+        # Настройки пришельцев
+        self.alien_speed_factor = 1

@@ -39,6 +39,7 @@ def run_game():
         ship.update()
 
         gf.update_bullets(bullets)
+        gf.update_aliens(aliens)
         # При каждом проходе цикла прорисовывется экран
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
