@@ -55,7 +55,7 @@ def check_events(ai_settings, screen, ship, bullets):
         elif event.type == pygame.KEYUP:
             check_keyup_events(event,ship)
 
-def  update_bullets(aliens, bullets):
+def  update_bullets(ai_settings, screen, ship, aliens, bullets):
     """Обновление позиции пуль и уничтожает старые пули """
     # Обновление позиции пуль
     bullets.update()
@@ -64,10 +64,22 @@ def  update_bullets(aliens, bullets):
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
+    check_bullet_allien_collisions(ai_settings, screen, ship, aliens, bullets)
 
+
+
+def check_bullet_allien_collisions(ai_settings, screen, ship, aliens, bullets):
+    """Обработка коллизий пуль с пришельцами"""
     # Проверка попаданий в пришельцев
     # При обнаружении попадания удалить пулю и пришельца
+
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+
+    if len(aliens) == 0:
+        # Уничтожение существующих пуль и создание нового флота
+        bullets.empty()
+        create_fleet(ai_settings, screen, ship, aliens)
+
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     """Выпускает пулю, если максимум еще не достигнут"""
