@@ -19,9 +19,14 @@ def run_game():
 
     # Создание группы для хранения пуль
     bullets = Group()
+    # Создание группы для пришельцев
+    aliens = Group()
 
     #Создание пришельца
     alien = Alien(ai_settings, screen)
+
+    # Создание флота пришельцев
+    gf.create_fleet(ai_settings,screen, aliens)
 
     # Изменение цвета фона игры
     bg_color = (230,230,230)
@@ -35,6 +40,6 @@ def run_game():
 
         gf.update_bullets(bullets)
         # При каждом проходе цикла прорисовывется экран
-        gf.update_screen(ai_settings, screen, ship, alien, bullets)
+        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
 run_game()
