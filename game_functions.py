@@ -68,7 +68,7 @@ def check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
             mouse_x, mouse_y = pygame.mouse.get_pos()
             check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bullets, mouse_x, mouse_y)
 
-def  update_bullets(ai_settings, screen, ship, aliens, bullets):
+def  update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """Обновление позиции пуль и уничтожает старые пули """
     # Обновление позиции пуль
     bullets.update()
@@ -77,7 +77,7 @@ def  update_bullets(ai_settings, screen, ship, aliens, bullets):
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
-    check_bullet_allien_collisions(ai_settings, screen, ship, aliens, bullets)
+    check_bullet_allien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets)
 
 
 
