@@ -7,20 +7,24 @@ from time import sleep
 
 
 
-def update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button):
+def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button):
     """Обновляет изображения на экране и отображает новый экран"""
     # При каждом проходе цкла прорисовывается экран
     screen.fill(ai_settings.bg_color)
 
 
-    #Все пули выводятся позади корабля
+    # Все пули выводятся позади корабля
     for bullet in bullets.sprites():
         bullet.draw_bullet()
 
     ship.blitme()
     aliens.draw(screen)
 
-    #Кнопка Play отображается в том случае, если игра неактивна
+    # Вывод счета
+    sb.show_score()
+
+
+    # Кнопка Play отображается в том случае, если игра неактивна
     if not stats.game_active:
         play_button.draw_button()
 
@@ -77,12 +81,17 @@ def  update_bullets(ai_settings, screen, ship, aliens, bullets):
 
 
 
-def check_bullet_allien_collisions(ai_settings, screen, ship, aliens, bullets):
+def check_bullet_allien_collisions(ai_settings, screen, stats, sb, ship, aliens, bullets):
     """Обработка коллизий пуль с пришельцами"""
     # Проверка попаданий в пришельцев
     # При обнаружении попадания удалить пулю и пришельца
 
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
+
+    if collisions:
+        for aliens in collisions.values():
+            stats.score += ai_settings.alien_points * len(aliens)
+            sb.prep_score()
 
     if len(aliens) == 0:
         # Уничтожение существующих пуль, повышение скорости и создание нового флота
