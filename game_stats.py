@@ -5,10 +5,13 @@ class GameStats():
         """Инициализирует стратистику"""
         self.ai_settings = ai_settings
         self.reset_stats()
+
+        # Рекорд не должен сбрасываться
         self.high_score = 0
 
         # Игра запускается в неактивном состоянии
         self.game_active = False
+
 
     def reset_stats(self):
         """Инициализирует статистику, изменяющуюся в ходе игры"""

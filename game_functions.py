@@ -91,7 +91,7 @@ def check_bullet_allien_collisions(ai_settings, screen, stats, sb, ship, aliens,
         for aliens in collisions.values():
             stats.score += ai_settings.alien_points * len(aliens)
             sb.prep_score()
-            print(stats.score)
+            check_high_score(stats, sb)
 
     if len(aliens) == 0:
         # Уничтожение существующих пуль, повышение скорости и создание нового флота
@@ -220,3 +220,8 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens, bul
         create_fleet(ai_settings, screen, ship, aliens)
         ship.center_ship()
 
+def check_high_score(stats, sb):
+    """Проверяет появился ли новый рекорд"""
+    if stats.score > stats.high_score:
+        stats.high_score = stats.score
+        sb.prep_high_score()
