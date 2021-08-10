@@ -33,24 +33,18 @@ def run_game():
     # Создание группы для пришельцев
     aliens = Group()
 
-    #Создание пришельца
-    alien = Alien(ai_settings, screen)
-
     # Создание флота пришельцев
     gf.create_fleet(ai_settings,screen,ship, aliens)
 
-    # Изменение цвета фона игры
-    bg_color = (230,230,230)
-    stats = GameStats(ai_settings)
     # Запуск основного цикла игры
     while True:
-        # Отслеживание cобытий клавиатуры и мыши
+
         gf.check_events(ai_settings, screen, stats, play_button, ship, aliens, bullets)
 
         if stats.game_active:
-            #Движение корабля
+            # Движение корабля
             ship.update()
-            gf.update_bullets(ai_settings, screen, stats, sb,   ship, aliens, bullets)
+            gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
             # При каждом проходе цикла прорисовывется экран
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)
