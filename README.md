@@ -1,7 +1,7 @@
 # Alien_Invasion
 ## Alien Invasion Game (python)
 
-Alien Invasion - its a arcade game from "Python Crash Course by Eric Matthes" book.
+**_Alien Invasion_** - its a arcade game from "Python Crash Course by Eric Matthes" book.
 I implemented this project to improve my skills.
 
 ## Intriduction
@@ -14,6 +14,6 @@ Initially, the player has three attempts to destroy all enemy ships.
 
 ## Controls
 
-Space-bar - fire
-Arrows keys (left/right) - move the ship left/right
+**_Space-bar_** - fire
+**_Arrows keys_** (left/right) - move the ship left/right
 
