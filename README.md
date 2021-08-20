@@ -9,7 +9,7 @@ I implemented this project to improve my skills.
 
 
 
-## ![Alt Text](https://github.com/ElenaKiriakova/Alien_Invasion/blob/master/images/free-icon-rocket-13564.png?raw=true)    Intriduction
+## ![Alt Text](https://github.com/ElenaKiriakova/Alien_Invasion/blob/master/images/free-icon-rocket-13564.png?raw=true)    Introduction
 
 In order to start the game, you need to run the file alien_invasion.py. The game starts with the ship in the center at the bottom of the screen.
 An enemy fleet of aliens appears at the top of the screen, in which the player must shoot. 
