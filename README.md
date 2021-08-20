@@ -1,4 +1,7 @@
 # Alien_Invasion
+
+https://github.com/ElenaKiriakova/Alien_Invasion/blob/master/images/screen.png?raw=true
+
 ## Alien Invasion Game (python)
 
 **_Alien Invasion_** - its a arcade game from "Python Crash Course by Eric Matthes" book.
