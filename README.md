@@ -1,6 +1,6 @@
 # Alien_Invasion
 
-https://github.com/ElenaKiriakova/Alien_Invasion/blob/master/images/screen.png?raw=true
+![Alt Text](https://github.com/ElenaKiriakova/Alien_Invasion/blob/master/images/screen.png?raw=true)
 
 ## Alien Invasion Game (python)
 
@@ -9,7 +9,7 @@ I implemented this project to improve my skills.
 
 ## Intriduction
 
-Alien Invasion its an addictive arcade. The game starts with the ship in the center at the bottom of the screen.
+In order to start the game, you need to run the file alien_invasion.py. The game starts with the ship in the center at the bottom of the screen.
 An enemy fleet of aliens appears at the top of the screen, in which the player must shoot. 
 As soon as the enemy fleet is destroyed, the level of the game will rise and the aliens will begin to move faster.
 If aliens fly up to the player's ship, one ship is lost. 
