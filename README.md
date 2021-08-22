@@ -22,5 +22,5 @@ Initially, the player has three attempts to destroy all enemy ships.
 ## ![Alt Text](https://github.com/ElenaKiriakova/Alien_Invasion/blob/master/images/free-icon-joystick-5332.png?raw=true)    	Controls
 
 * **_Space-bar_** - fire
-* **_Arrows keys_** (left/right) - move the ship left/right
+* **_Arrows keys_** (left/right) -  move the ship left/right
 
